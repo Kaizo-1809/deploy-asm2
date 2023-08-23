@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel='stylesheet' href='/stylesheets/admin.css' />
+</head>
+
+<body>
+  {{!-- <div class="sidebar">
+    <h5 style="margin-top:50px; font-size: 2.25rem;">Hello, Admin</h5>
+    <a class="sidebar-link" href="/toy/lego/">Manage Lego</a>
+    <a class="sidebar-link" href="/toy/dc/">Manage DC</a>
+    <a class="sidebar-link" href="/toy/figure/">Manage Figure</a>
+  </div> --}}
+  <div class="content">
+    <h1>Admin Dashboard</h1>
+    <div class="sidebar">
+      <a class="sidebar-link" href="/toy/lego/">Manage Lego</a>
+      <a class="sidebar-link" href="/toy/dc/">Manage DC</a>
+      <a class="sidebar-link" href="/toy/figure/">Manage Figure</a>
+    </div>
+    <form action="/search" method="post">
+      <input class="form-control mt-3" type="search" name="keyword" placeholder="Enter product name or brand"
+        required />
+    </form>
+
+
+    <div class="container">
+      {{#each lego}}
+      <div class="card">
+        <a href="/toy/lego/detail/{{ _id }}" class="img-wrap"> <img src="{{ image }}"> </a>
+        <h3>{{ modelName }}</h3>
+        <p>${{ price }}</p>
+        <p>Quantity: {{ quantity }}</p>
+        <th>
+          <div class="cardbtn">
+            <a href="/toy/lego/edit/{{ _id }}" class="btn btn-warning">Edit</a>
+            <a href="/toy/lego//delete/{{ _id }}" class="btn btn-danger"
+              onclick="return confirm('Are you sure you want to delete this student?')">Delete</a>
+          </div>
+        </th>
+      </div>
+      {{/each}}
+
+      {{#each dc}}
+      <div class="card">
+        <a href="/toy/dc/detail/{{ _id }}" class="img-wrap"> <img src="{{ image }}"> </a>
+        <h3>{{ modelName }}</h3>
+        <p>{{ price }}</p>
+        <p>Quantity: {{ quantity }}</p>
+        <th>
+          <div class="cardbtn">
+            <a href="/toy/dc/edit/{{ _id }}" class="btn btn-warning">Edit</a>
+            <a href="/toy/dc//delete/{{ _id }}" class="btn btn-danger"
+              onclick="return confirm('Are you sure you want to delete this toy?')">Delete</a>
+          </div>
+        </th>
+      </div>
+      {{/each}}
+
+      {{#each figure}}
+      <div class="card">
+        <a href="/toy/figure/detail/{{ _id }}" class="img-wrap"> <img src="{{ image }}"> </a>
+        <h3>{{ modelName }}</h3>
+        <p>${{ price }}</p>
+        <p>Quantity: {{ quantity }}</p>
+        <th>
+          <div class="cardbtn">
+            <a href="/toy/figure/edit/{{ _id }}" class="btn btn-warning">Edit</a>
+            <a href="/toy/figure//delete/{{ _id }}" class="btn btn-danger"
+              onclick="return confirm('Are you sure you want to delete this figure?')">Delete</a>
+          </div>
+        </th>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</body>
+
+</html>

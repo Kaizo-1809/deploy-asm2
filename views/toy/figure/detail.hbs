@@ -1,0 +1,31 @@
+<head>
+  <link rel="stylesheet" href="/stylesheets/detail.css">
+</head>
+<a href="/">Home Page</a>
+<a href=""></a>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img src="{{figure.image}}" />
+    </div>
+
+    <div class="col">
+      <h1>Product Information</h1>
+      <h5 class="mt-5">Brand: {{figure.brandName}}</h5>
+      <h5>Model: {{figure.modelName}}</h5>
+      <h5>Price: ${{figure.price}}</h5>
+      <h5>Description: <br>{{figure.description}}</h5>
+      <input
+          type="number"
+          name="quantity"
+          min="1"
+          max="{{ figure.quantity }}"
+          value="1"
+        />
+        <input type="hidden" name="id" value="{{figure._id }}">
+        <input type="hidden" name="price" value="{{figure.price }}">
+        <input type="submit" class="btn btn-primary" value="Order" />
+      </form>
+    </div>
+  </div>
+</div>

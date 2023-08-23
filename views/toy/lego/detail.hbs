@@ -1,0 +1,31 @@
+<head>
+  <link rel="stylesheet" href="/stylesheets/detail.css">
+</head>
+<a href="/">Home Page</a>
+<a href=""></a>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img src="{{lego.image}}" />
+    </div>
+
+    <div class="col">
+      <h1>Product Information</h1>
+      <h5 class="mt-5">Brand: {{lego.brandName}}</h5>
+      <h5>Model: {{lego.modelName}}</h5>
+      <h5>Price: ${{lego.price}}</h5>
+      <h5>Description: <br>{{lego.description}}</h5>
+      <input
+          type="number"
+          name="quantity"
+          min="1"
+          max="{{ lego.quantity }}"
+          value="1"
+        />
+        <input type="hidden" name="id" value="{{ lego._id }}">
+        <input type="hidden" name="price" value="{{ lego.price }}">
+        <input type="submit" class="btn btn-primary" value="Order" />
+      </form>
+    </div>
+  </div>
+</div>

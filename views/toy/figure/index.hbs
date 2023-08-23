@@ -1,0 +1,39 @@
+<a class="btn btn-primary mt-3" href="/">Back</a>
+<div class="container mt-3 mb-3">
+  <h1>Figure List</h1>
+  <a href="/toy/figure/add" class="btn btn-success">Add</a>
+  <a
+    onclick="return confirm('Are you sure you want to delete all')"
+    href="/toy/figure//deleteall"
+    class="btn btn-danger"
+  >Delete all</a>
+  <table border="1">
+    <tr>
+      <th colspan="7">Figure List</th>
+    </tr>
+    <tr>
+      <th>Image</th>
+      <th>Brand Name</th>
+      <th>Model Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Menu</th>
+    </tr>
+    {{#each figure}}
+      <tr>
+        <th><img src="{{ image }}" width="100" height="150"></th>
+        <th>{{brandName}}</th>
+        <th>{{modelName}}</th>
+        <th>{{description}}</th>
+        <th>${{price}}</th>
+        <th>{{ quantity }}</th>
+        <th>
+            <a href="/toy/figure/edit/{{ _id }}" class="btn btn-warning">Edit</a> 
+            <a href="/toy/figure//delete/{{ _id }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this figure?')">Delete</a>
+        </th>
+      </tr>
+    {{/each}}
+
+  </table>
+</div>

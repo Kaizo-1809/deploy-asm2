@@ -1,0 +1,49 @@
+<a class="btn btn-primary mt-3" href="/toy/lego">Back</a>
+    <div class="container col-md-8 mt-3 mb-3">
+        <form action="/toy/lego/add" method="post">
+            <h1 class="text text-danger">Add Product</h1>
+            <div class="form-group">
+                <label class="h4 text text-success">Brand name</label>
+                <input class="form-control" type="text" name="brandName" required>
+            {{!-- <div class="form-group"> <label class="h4 text text-success" for="">Brand name</label>
+                <input type="radio" value="lego" id="1" name="brandName" class="btn btn-primary">
+                <label for="1">Lego</label><br>
+                <input type="radio" value="dc" id="2" name="brandName" class="btn btn-primary">
+                <label for="2">Dc</label><br>
+                <input type="radio" value="figure" id="3" name="brandName" class="btn btn-primary">
+                <label for="3">Figure</label><br>
+            </div> --}}
+
+            </div>
+            <div class="form-group">
+                <label class="h4 text text-success">Model name</label>
+                <input class="form-control" type="text" name="modelName" required>
+            </div>
+            <div class="form-group">
+                <label class="h4 text text-success">Description</label>
+                <input class="form-control" type="text" name="description" required>
+            </div>
+            <div class="form-group">
+                <label class="h4 text text-success">Price</label>
+                <input class="form-control" type="text" name="price" required>
+            </div>
+            <div class="form-group">
+                <label class="h4 text text-success">Quantity</label>
+                <input class="form-control" type="text" name="quantity" required>
+            {{!-- </div>
+                 <div class="form-group">
+                <label class="h4 text text-success">Best Seller</label>
+                <input class="form-control" type="checkbox" value="Yes" id="1" name="bestseller" value="{{ lego.bestseller }}">
+                <label for="1"> Yes</label>
+                <input class="form-control" type="checkbox" value="No" id="2" name="bestseller" value="{{ lego.bestseller }}">
+                <label for="2"> No</label>
+            </div> --}}
+            <div class="form-group">
+                <label class="h4 text text-success">Image url</label>
+                <input class="form-control" type="text" name="image" required>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Add">
+            </div>
+        </form> 
+    </div>
